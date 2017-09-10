@@ -1,0 +1,4 @@
+{
+  "mongoDbUri": "mongodb://yifant:yifant@ds133271.mlab.com:33271/olj-dataset",
+  "jwtSecret": "I love react!"
+}
