@@ -9,8 +9,9 @@ service mongod start
 pip install -r requirements.txt
 
 cd ./web_server/client
-# npm install
+npm install
 # npm run build
+npm run-script build
 cd ../server
 npm install
 nodemon ./bin/www &
