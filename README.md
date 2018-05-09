@@ -28,7 +28,7 @@ cd ../news_recommendation_service <br/>
 python recommendation_service.py & <br/>
 python click_log_processor.py & <br/>
 
-# stop the jobs: 
+# Stop the jobs: 
 fuser -k 3000/tcp <br/>
 service redis_6379 stop <br/>
 service mongod stop <br/>
