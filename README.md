@@ -17,10 +17,11 @@ pip install -r requirements.txt
 
 cd ./web_server/client
 npm install
+
 # npm run build
-npm run-script build
-cd ../server
-npm install
+npm run-script build <br/>
+cd ../server <br/>
+npm install <br/>
 nodemon ./bin/www &
 cd ../../backend_server
 python service.py &
