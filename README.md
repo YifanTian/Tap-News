@@ -1,38 +1,34 @@
 # Tap-News
-A Real Time News Scraping and Recommendation System using React, Node.js, MongoDB, and TensorFlow.
+A News Scraping and Recommendation System using React, Node.js, MongoDB, and TensorFlow.
 
-Website: www.smartanteater.com
 If you like this project. Please give it a star. If you have any interesting idea about further development, just let me know!
 
+# Run the job: 
+#!/bin/bash <br/>
+fuser -k 3000/tcp <br/>
+fuser -k 4040/tcp <br/>
+fuser -k 5050/tcp <br/>
 
-#!/bin/bash
-fuser -k 3000/tcp
-fuser -k 4040/tcp
-fuser -k 5050/tcp
+service redis_6379 start <br/>
+service mongod start <br/>
 
-service redis_6379 start
-service mongod start
+pip install -r requirements.txt <br/>
 
-pip install -r requirements.txt
+cd ./web_server/client <br/>
+npm install <br/>
 
-cd ./web_server/client
-npm install
-
-# npm run build
+npm run build <br/>
 npm run-script build <br/>
 cd ../server <br/>
 npm install <br/>
-nodemon ./bin/www &
-cd ../../backend_server
-python service.py &
-cd ../news_recommendation_service
-python recommendation_service.py &
-python click_log_processor.py &
+nodemon ./bin/www &  <br/>
+cd ../../backend_server <br/>
+python service.py & <br/>
+cd ../news_recommendation_service <br/>
+python recommendation_service.py & <br/>
+python click_log_processor.py & <br/>
 
-echo "=================================================="
-read -p "PRESS [ANY KEY] TO TERMINATE PROCESSES." PRESSKEY
-
-kill $(jobs -p)
-fuser -k 3000/tcp
-service redis_6379 stop
-service mongod stop
+# stop the jobs: 
+fuser -k 3000/tcp <br/>
+service redis_6379 stop <br/>
+service mongod stop <br/>
